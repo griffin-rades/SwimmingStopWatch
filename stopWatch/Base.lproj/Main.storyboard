@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Timer View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TimerViewController" customModule="stopWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0sW-Gz-z5D">
+                                <rect key="frame" x="20" y="224" width="374" height="614"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="timeCell" rowHeight="64" id="Tv3-uS-hSc" customClass="TimerTableViewCell" customModule="stopWatch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tv3-uS-hSc" id="4VD-hk-chq">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXm-Io-cOC">
+                                                    <rect key="frame" x="20" y="11" width="141" height="42"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="141" id="mNO-ow-lE3"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUQ-aa-7bg">
+                                                    <rect key="frame" x="307" y="11" width="43" height="42"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="Uq2-4i-yXG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <state key="normal" title="Stop">
+                                                        <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YeN-7n-abN">
+                                                    <rect key="frame" x="209" y="11" width="56" height="42"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56" id="S9v-gt-c1Z"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <state key="normal" title="Split"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KXm-Io-cOC" firstAttribute="leading" secondItem="4VD-hk-chq" secondAttribute="leadingMargin" id="2PJ-le-UYc"/>
+                                                <constraint firstItem="SUQ-aa-7bg" firstAttribute="leading" secondItem="YeN-7n-abN" secondAttribute="trailing" constant="42" id="65S-fx-lOr"/>
+                                                <constraint firstItem="KXm-Io-cOC" firstAttribute="bottom" secondItem="YeN-7n-abN" secondAttribute="bottom" id="Xc4-Lq-Rc1"/>
+                                                <constraint firstItem="KXm-Io-cOC" firstAttribute="bottom" secondItem="4VD-hk-chq" secondAttribute="bottomMargin" id="bUc-xs-WBO"/>
+                                                <constraint firstItem="YeN-7n-abN" firstAttribute="baseline" secondItem="SUQ-aa-7bg" secondAttribute="firstBaseline" id="cZq-bC-9xH"/>
+                                                <constraint firstItem="YeN-7n-abN" firstAttribute="top" secondItem="SUQ-aa-7bg" secondAttribute="top" id="oBd-rC-tJx"/>
+                                                <constraint firstItem="KXm-Io-cOC" firstAttribute="top" secondItem="4VD-hk-chq" secondAttribute="topMargin" id="q0K-iA-rZK"/>
+                                                <constraint firstItem="YeN-7n-abN" firstAttribute="leading" secondItem="KXm-Io-cOC" secondAttribute="trailing" constant="48" id="s5i-Uf-fnK"/>
+                                                <constraint firstItem="KXm-Io-cOC" firstAttribute="top" secondItem="YeN-7n-abN" secondAttribute="top" id="wic-0D-DTd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellTimer" destination="KXm-Io-cOC" id="nbP-Uz-ih5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="SHv-VA-sZX">
+                                <rect key="frame" x="37" y="156.5" width="155" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="NKB-W3-RQ2"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderFunc:" destination="BYZ-38-t0r" eventType="valueChanged" id="zWx-sq-72U"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdQ-Jh-1Rz">
+                                <rect key="frame" x="274" y="139" width="99" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="START ALL"/>
+                                <connections>
+                                    <action selector="startStopAllClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EoC-G4-Kqy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swimmers: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pM4-sg-pzh">
+                                <rect key="frame" x="72" y="128" width="91.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbC-TV-B71">
+                                <rect key="frame" x="84" y="64" width="247" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fbC-TV-B71" firstAttribute="centerX" secondItem="0sW-Gz-z5D" secondAttribute="centerX" id="06n-qx-Jt8"/>
+                            <constraint firstItem="pM4-sg-pzh" firstAttribute="top" secondItem="fbC-TV-B71" secondAttribute="bottom" constant="28" id="2AO-oe-kPS"/>
+                            <constraint firstItem="0sW-Gz-z5D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4Qw-gJ-ejf"/>
+                            <constraint firstItem="0sW-Gz-z5D" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="B1p-kN-Bmb"/>
+                            <constraint firstItem="fbC-TV-B71" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="64" id="Du4-Vl-nhF"/>
+                            <constraint firstItem="0sW-Gz-z5D" firstAttribute="top" secondItem="XdQ-Jh-1Rz" secondAttribute="bottom" constant="49" id="Fne-gj-nY1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XdQ-Jh-1Rz" secondAttribute="trailing" constant="41" id="JBL-Li-hOt"/>
+                            <constraint firstItem="SHv-VA-sZX" firstAttribute="top" secondItem="pM4-sg-pzh" secondAttribute="bottom" constant="9" id="KoQ-Bu-Cky"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0sW-Gz-z5D" secondAttribute="bottom" constant="24" id="LZc-j8-pMH"/>
+                            <constraint firstItem="pM4-sg-pzh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="72" id="a7N-Gr-Zgg"/>
+                            <constraint firstItem="SHv-VA-sZX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="39" id="k8J-pq-xVJ"/>
+                            <constraint firstItem="XdQ-Jh-1Rz" firstAttribute="leading" secondItem="SHv-VA-sZX" secondAttribute="trailing" constant="84" id="o7S-hZ-6ha"/>
+                            <constraint firstItem="XdQ-Jh-1Rz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="95" id="qCq-Gv-LUd"/>
+                            <constraint firstItem="pM4-sg-pzh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="84" id="yvo-Tx-A4X"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="globalTime" destination="fbC-TV-B71" id="Ju8-ho-8Tu"/>
+                        <outlet property="numSwimLabel" destination="pM4-sg-pzh" id="fBk-lr-edv"/>
+                        <outlet property="numSwimSlider" destination="SHv-VA-sZX" id="kzZ-IO-dp7"/>
+                        <outlet property="startStopAllButton" destination="XdQ-Jh-1Rz" id="wvB-CJ-LWO"/>
+                        <outlet property="tableView" destination="0sW-Gz-z5D" id="d0E-hF-b9t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+</document>
